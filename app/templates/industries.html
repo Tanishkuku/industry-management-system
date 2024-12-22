@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Industries</h1>
+<form method="POST">
+    <input type="text" name="name" placeholder="Industry Name" required>
+    <button type="submit">Add Industry</button>
+</form>
+<ul>
+    {% for industry in industries %}
+    <li>{{ industry.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

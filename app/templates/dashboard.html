@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard Overview</h1>
+<h2>Industries</h2>
+<ul>
+    {% for industry in industries %}
+    <li>{{ industry.name }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Storages</h2>
+<ul>
+    {% for storage in storages %}
+    <li>{{ storage.name }} - {{ storage.address }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Items</h2>
+<ul>
+    {% for item in items %}
+    <li>{{ item.name }} - ₹{{ item.price }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Expenses</h2>
+<ul>
+    {% for expense in expenses %}
+    <li>{{ expense.title }} - ₹{{ expense.amount_inr }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Trades</h2>
+<ul>
+    {% for trade in trades %}
+    <li>{{ trade.description }} - ₹{{ trade.amount_inr }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Transactions</h2>
+<ul>
+    {% for transact in transacts %}
+    <li>{{ transact.description }} - ₹{{ transact.amount_inr }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Inventory</h2>
+<ul>
+    {% for item in inventory %}
+    <li>{{ item.title }} - {{ item.description }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

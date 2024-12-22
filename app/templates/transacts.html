@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Transactions</h1>
+<form method="POST">
+    <textarea name="description" placeholder="Description"></textarea>
+    <input type="text" name="amount_inr" placeholder="Amount (INR)" required>
+    <button type="submit">Add Transaction</button>
+</form>
+<ul>
+    {% for transact in transacts %}
+    <li>{{ transact.description }} - ₹{{ transact.amount_inr }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

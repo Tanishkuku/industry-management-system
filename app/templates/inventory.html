@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Inventory</h1>
+<form method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="description" placeholder="Description"></textarea>
+    <button type="submit">Add Item</button>
+</form>
+<ul>
+    {% for item in inventory %}
+    <li>{{ item.title }} - {{ item.description }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
