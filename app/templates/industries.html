@@ -7,7 +7,7 @@
 </form>
 <ul>
     {% for industry in industries %}
-    <li>{{ industry.name }}</li>
+        <li>{{ industry.name }} (Folder: {{ industry.folder }})</li>
     {% endfor %}
 </ul>
 {% endblock %}

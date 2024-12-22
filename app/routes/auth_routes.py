@@ -22,9 +22,9 @@ def login():
 def register():
     if request.method == 'POST':
         username = request.form.get('username')
-        password = request.form.get('password')
+        password = bcrypt.generate_password_hash(request.form.get('password')).decode('utf-8')
         role = request.form.get('role')
-        new_user = User(username=username, password=bcrypt.generate_password_hash(password).decode('utf-8'), role=role)
+        new_user = User(username=username, password=password, role=role)
         db.session.add(new_user)
         db.session.commit()
         flash('User registered successfully!', 'success')

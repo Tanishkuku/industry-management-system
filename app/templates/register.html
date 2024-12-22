@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Register</h1>
+<form method="POST" action="{{ url_for('auth.register') }}">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <select name="role">
+        <option value="head">Head</option>
+        <option value="sub-head">Sub-Head</option>
+        <option value="trade-subject">Trade Subject</option>
+        <option value="inventory-subject">Inventory Subject</option>
+        <option value="expense-account">Expense Account</option>
+    </select>
+    <button type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,12 +1,13 @@
 from app import db, bcrypt
 from flask_login import UserMixin
+from app import bcrypt
 
 class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
-    role = db.Column(db.String(50), nullable=False)  # head, sub-head, etc.
+    role = db.Column(db.String(50), nullable=False)
     industry_id = db.Column(db.Integer, db.ForeignKey('industries.id'))
     last_active = db.Column(db.DateTime)
     user_folder = db.Column(db.String(255), nullable=True)
